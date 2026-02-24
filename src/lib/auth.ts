@@ -34,7 +34,7 @@ export const auth = betterAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string, 
         },
     },
-    baseURL: "http://localhost:4000",
+    baseURL: process.env.BETTER_AUTH_URL,
   trustedOrigins: ["http://localhost:3000"],
      
 
