@@ -8427,9 +8427,8 @@ var auth = betterAuth({
     provider: "postgresql"
     // or "mysql", "postgresql", ...etc
   }),
-  experimental: {
-    joins: true
-  },
+  baseURL: process.env.BETTER_AUTH_URL,
+  trustedOrigins: ["http://localhost:3000"],
   user: {
     additionalFields: {
       role: {
@@ -8452,9 +8451,7 @@ var auth = betterAuth({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }
-  },
-  baseURL: process.env.BETTER_AUTH_URL,
-  trustedOrigins: ["http://localhost:3000"]
+  }
 });
 
 // src/modules/tutor/tutor.router.ts
